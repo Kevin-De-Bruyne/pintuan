@@ -1,0 +1,44 @@
+/* pages/pwd_setting/pwd_setting.wxss */
+.content{
+  padding: 40rpx;
+}
+.newPassword{
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx 40rpx;
+  font-size: 25rpx;
+  margin-top: 20rpx;
+}
+.newPassword input{
+  width: 100%;
+  height: 100%;
+}
+.confirmPassword{
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx 40rpx;
+  font-size: 25rpx;
+  margin-top: 20rpx;
+}
+.confirmPassword input{
+  width: 100%;
+  height: 100%;
+}
+.oldPassword{
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx 40rpx;
+  font-size: 25rpx;
+}
+.oldPassword input{
+  width: 100%;
+  height: 100%;
+}
+.save{
+  margin-top: 40rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 25rpx 40rpx;
+  color: #fff;
+  background-color:rgb(152,152,152);
+}

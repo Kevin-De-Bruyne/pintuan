@@ -1,0 +1,20 @@
+<!--pages/category/category.wxml-->
+<view class="category">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="分类"></navBar>
+  <view class="content">
+    <view class="left">
+     <view class="category_list {{cateIndex==index?'cate_active':''}}" wx:for="{{data.category1}}"  wx:key="index" data-index="{{index}}" bindtap="cateClick">
+       {{item.name}}
+      </view>
+    </view>
+  <view class="right">
+    <view class="shop_list" wx:for="{{goods}}"  wx:key="index" data-index="{{index}}" bindtap="goodsClick">
+      <view class="shop_t">
+        <image src="{{item.original_img}}"></image>
+      </view>
+      <view class="shop_b">{{item.goods_name}}</view>
+    </view>
+  </view>
+  </view>
+</view>

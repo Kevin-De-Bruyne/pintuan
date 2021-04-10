@@ -1,0 +1,12 @@
+/* pages/mine/changjian/changjian.wxss */
+.changjian{
+  margin: 0;
+  padding: 0;
+}
+.van-icon-question-o{
+  font-size: 40rpx!important;
+}
+.title{
+  display: flex;
+  align-items: center;
+}

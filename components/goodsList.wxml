@@ -1,0 +1,29 @@
+<!--components/goodsList.wxml-->
+      <!-- 商品详情 -->
+      <view class="goods_detail" wx:for="{{goods}}" bindtap="goodsClick" data-index="{{index}}" wx:if="{{goods!=''}}">
+        <view class="goods_left">
+          <image src="{{item.original_img}}"></image>
+        </view>
+        <view class="goods_right">
+          <view class="goods_r_t">{{item.goods_name}}</view>
+          <view class="goods_r_c">
+            <view class="goods_r_c_l">
+              <text class="now_price">¥{{item.team_price}}</text>
+              <text class="old_price">¥{{item.shop_price}}</text>
+            </view>
+            <view class="goods_r_c_r">
+              <view class="user_list" wx:for="{{item.users}}">
+                <image src="{{item.head_pic}}"></image>
+              </view>
+            </view>
+          </view>
+          <view class="goods_r_b">
+            <view class="goods_r_b_l">
+              <view class="goods_r_b_l_t">{{item.team_num}}人拼团，{{item.number_winners}}人买到产品</view>
+              <view class="goods_r_b_l_b">{{item.team_num-item.number_winners}}人各奖励{{item.reward_amount}}元红包</view>
+            </view>
+            <view class="goods_r_b_r"><text class="iconfont icon-youjiantou_huaban"></text></view>
+          </view>
+        </view>
+      </view>
+      <view class="goods_details" wx:if="{{goods==''}}">暂无商品</view>

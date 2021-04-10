@@ -1,0 +1,13 @@
+<!--pages/team_list/team_list.wxml-->
+<view class="team_list">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="成员列表"></navBar>
+  <view class="conent">
+    <view class="member_list" wx:for="{{data}}">
+      <view class="member_l">
+        <image src="{{item.head_pic}}"></image>
+      </view>
+      <view class="member_r">{{item.nickname}}</view>
+    </view>
+  </view>
+</view>

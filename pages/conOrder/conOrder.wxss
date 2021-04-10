@@ -1,0 +1,202 @@
+/* pages/conOrder/conOrder.wxss */
+.conOrder{
+  margin: 0;
+  padding: 0;
+}
+.content{
+  padding: 10rpx 10rpx;
+}
+.add_btn{
+ background-color: #fff;
+ height: 120rpx;
+ /* border-bottom: 1px solid black; */
+ margin-top: 90rpx;
+ border-radius: 15rpx;
+ line-height: 120rpx;
+ font-size: 30rpx;
+ text-align: center;
+ /* display: flex;
+ flex-direction: row; */
+}
+.address_info{
+  display: flex;
+  flex-direction: column;
+  max-width: 120rpx;
+  max-height: 160rpx;
+}
+.goods_info{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+}
+.goods_t{
+  margin: 20rpx 20rpx 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.goods_l{
+  width: 150rpx;
+  height: 150rpx;
+}
+.goods_l image{
+  width: 100%;
+  height: 100%;
+}
+text{
+  font-size: 23rpx;
+  max-width: 350rpx;
+  /* padding-left: 30rpx; */
+}
+.goods_r{
+  display: flex;
+  flex-direction: column;
+}
+.goods_r_t{
+  font-size: 23rpx;
+}
+.goods_r_b{
+  font-size: 23rpx;
+  text-align: right;
+}
+.goods_b{
+  margin: 50rpx 20rpx 20rpx 20rpx;
+  border-radius: 35rpx;
+  background-color:rgb(247,247,247);
+  padding-left: 35rpx;
+  font-size: 25rpx;
+  color: rgb(138,138,138);
+  padding: 15rpx 35rpx;
+}
+.goods_price{
+  padding: 20rpx;
+  border-radius: 15rpx;
+  display: flex;
+  margin-top: 20rpx;
+  flex-direction: column;
+  background-color: #fff;
+}
+.goods_price_t{
+  display: flex;
+  justify-content: space-between;
+}
+.goods_price_tt{
+  display: flex;
+  padding-top: 20rpx;
+  justify-content: space-between;
+}
+.goods_price_b{
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: space-between;
+}
+.totalprice_text{
+  font-size: 25rpx;
+}
+.totalprice{
+  font-size: 27rpx;
+  font-weight: bold;
+}
+.yunfei_text{
+  font-size: 25rpx;
+}
+.yunfei{
+  font-size: 27rpx;
+  font-weight: bold;
+}
+.yunfeis{
+  font-size: 27rpx;
+  font-weight: bold;
+  color: rgb(220,58,38);
+}
+.goods_t_t{
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid rgb(238,238,238);
+}
+.totalprices{
+  font-size: 33rpx;
+  font-weight: bold;
+  color: rgb(220,58,38);
+}
+.pay{
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(238,238,238);
+  border-radius: 20rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.pay_t{
+  display: flex;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid rgb(238,238,238);
+}
+.pay_b{
+  display: flex;
+  align-items: center;
+  padding-top: 30rpx;
+}
+.yue{
+  font-size: 26rpx;
+  padding-left: 30rpx;
+  line-height: 45rpx;
+}
+.use_for{
+  font-size: 23rpx;
+  padding-left: 30rpx;
+  color: rgb(138,138,138);
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top:200rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.bottom_b{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.bottom_b_l{
+  display: flex;
+  padding-left: 30rpx;
+  align-items: center;
+}
+.zhenshi_price{
+  padding: 15rpx;
+  color: rgb(220,58,38);
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.num{
+  color: rgb(186,186,186);
+  padding: 10rpx;
+}
+.bottom_b_r{
+  padding: 20rpx 45rpx;
+  background-color: rgb(246,44,38);
+  color: white;
+  font-size: 25rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  margin-right: 30rpx;
+}
+.pay_ts{
+  display: flex;
+  align-items: center;
+  /* padding-bottom: 30rpx; */
+  border-bottom: 1px solid rgb(238,238,238);
+}
+.pay_ts input{
+  padding: 15rpx  40rpx;
+  font-size: 26rpx;
+  width: 70%;
+}

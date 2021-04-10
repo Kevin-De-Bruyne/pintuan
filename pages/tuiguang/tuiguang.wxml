@@ -1,0 +1,7 @@
+<!--pages/qr_code/qr_code.wxml-->
+<view class="qr_code">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar home navigationBarTitle="推广二维码"></navBar>
+  <image src="{{data}}"></image>
+  <!-- <button class="button-share" open-type="share">点击分享给微信好友</button> -->
+</view>

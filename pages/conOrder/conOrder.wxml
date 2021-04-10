@@ -1,0 +1,94 @@
+<!--pages/conOrder/conOrder.wxml-->
+<view class="conOrder">
+  <navBar back home navigationBarTitle="确认拼团"></navBar>
+  <view class="content">
+    <!-- 添加收货按钮 -->
+    <view class="add_btn" bindtap="add_address" wx:if="{{data.address==''}}">
+      <text class="iconfont icon-shouhuodizhi" style="color:black;padding-right:30rpx;"></text>添加收货地址
+    </view>
+    <view class="add_btn" bindtap="add_address" wx:else>
+      <text class="iconfont icon-shouhuodizhi" style="color:black;padding-right:30rpx;"></text>
+        <text>{{data.address.consignee}}</text>
+        <text style="margin-left:30rpx;">{{data.address.mobile}}</text>
+        <text style="margin-left:30rpx;">{{data.address.address}}</text>
+    </view>
+    <!-- 商品信息 -->
+    <view class="goods_info">
+      <view class="goods_t">
+        <view class="goods_l">
+          <image src="{{data.goods.original_img}}"></image>
+        </view>
+        <text>{{data.goods.goods_name}}</text>
+        <view class="goods_r">
+          <view class="goods_r_t">¥{{data.goods.shop_price}}</view>
+          <view class="goods_r_b">x{{data.goods.goods_num}}</view>
+        </view>
+      </view>
+      <!-- 底部 -->
+      <view class="goods_b">
+        <input type="text" placeholder="给商家留言" value="{{user_note}}" bind:input="onInput"/>
+      </view>
+    </view>
+    <!-- 商品价格 -->
+    <view class="goods_price">
+      <!-- 商品顶部 -->
+      <view class="goods_t_t">
+        <view class="goods_price_t">
+        <view class="totalprice_text">商品总价</view>
+        <view class="totalprice">¥{{data.order_amount}}</view>
+      </view>
+      <view class="goods_price_b">
+        <view class="yunfei_text">运费</view>
+        <view class="yunfei" wx:if="{{data.is_free==1}}">包邮</view>
+        <view class="yunfei" wx:else>¥{{data.shipping_fee}}</view>
+      </view>
+      </view>
+      <!-- 商品底部 -->
+      <view class="goods_t_b">
+        <view class="goods_price_tt">
+        <view class="totalprice_text">预付款</view>
+        <view class="totalprices">¥{{data.total_amount}}</view>
+      </view>
+      <view class="goods_price_b">
+        <view class="yunfei_text">预计红包补贴</view>
+        <view class="yunfeis"><text class="iconfont icon-hongbao"></text> +¥{{data.reward_amount}}</view>
+      </view>
+      </view>
+    </view>
+    <!-- 支付方式 -->
+    <view class="pay">
+      <view class="pay_t">
+        <van-checkbox value="{{ yuchecked }}" bind:change="onChange" shape="round" checked-color="red"></van-checkbox>
+        <text class="iconfont icon-yue01"></text>
+        <text class="yue">余额支付</text>
+        <text class="use_for">可用：¥{{data.user_money}}</text>
+      </view>
+      <view class="pay_ts" wx:if="{{yue_show}}">
+        <text style="font-size:26rpx;padding-left:5rpx;white-space:nowrap;">交易密码：</text><input type="password" placeholder="请输入密码"
+        model:value="{{pwd}}" />
+      </view>
+      <view class="pay_b">
+        <van-checkbox value="{{ checked }}" bind:change="onChange" shape="round" checked-color="red"></van-checkbox>
+        <text class="iconfont icon-weixin"></text>
+        <text class="yue">微信支付</text>
+      </view>
+    </view>
+
+  </view>
+      <!-- 支付底部 -->
+      <view class="bottom">
+      <view class="bottom_t">
+        <van-notice-bar
+         left-icon="volume-o"
+         text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
+       />
+      </view>
+      <view class="bottom_b">
+        <view class="bottom_b_l">
+          <text class="zhenshi_price">¥{{data.total_amount}}</text>
+          <text class="num">(共{{data.goods_num}}件)</text>
+        </view>
+        <view class="bottom_b_r" bindtap="pay">立即支付</view>
+      </view>
+    </view>
+</view>

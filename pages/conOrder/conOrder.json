@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "navBar": "/components/navbar/navbar",
+    "van-checkbox": "../../vant/checkbox/index",
+    "van-notice-bar": "../../vant/notice-bar/index"
+  },
+  "navigationStyle":"custom"
+}

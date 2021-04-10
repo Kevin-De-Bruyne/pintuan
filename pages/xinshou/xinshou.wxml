@@ -1,0 +1,6 @@
+<!--pages/read/read.wxml-->
+<view class="read">
+  <navBar back home navigationBarTitle="新手指南"></navBar>
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <rich-text nodes="{{data.novice.content}}"></rich-text>
+</view>

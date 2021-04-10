@@ -1,0 +1,100 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/tuiguang/tuiguang",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/mine/shoucang/shoucang",
+    "pages/mine/changjian/changjian",
+    "pages/mine/fuwu/fuwu",
+    "pages/mine/fuwu/user_xieyi/user_xieyi",
+    "pages/mine/fuwu/yinsi_xieyi/yinsi_xieyi",
+    "pages/mine/fuwu/pintuan_xieyi/pintuan_xieyi",
+    "pages/mine/shangwu/shangwu",
+    "pages/shopDetail/shopDetail",
+    "pages/setting/setting",
+    "pages/team_list/team_list",
+    "pages/conOrder/conOrder",
+    "pages/order_list/order_list",
+    "pages/account_list/account_list",
+    "pages/collect/collect",
+    "pages/read/read",
+    "pages/xinshou/xinshou",
+    "pages/address/address",
+    "pages/category/category",
+    "pages/address/add_address/add_address",
+    "pages/shouquan/shouquan",
+    "pages/qr_code/qr_code",
+    "pages/order_detail/order_detail",
+    "pages/pwd_setting/pwd_setting"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FC5E2F",
+    "navigationBarTitleText": "速去拼",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#F1F1F1"
+  },
+  "usingComponents": {
+    "van-icon": "vant/icon/index",
+    "van-row": "vant/row/index",
+    "van-col": "vant/col/index",
+    "van-transition": "vant/transition/index",
+    "van-tab": "vant/tab/index",
+    "van-tabs": "vant/tabs/index",
+    "van-toast": "vant/toast/index",
+    "van-goods-action": "vant/goods-action/index",
+    "van-goods-action-button": "vant/goods-action-button/index",
+    "van-popup": "vant/popup/index",
+    "van-stepper": "vant/stepper/index",
+    "van-rate": "vant/rate/index",
+    "van-switch": "vant/switch/index",
+    "van-field": "vant/field/index",
+    "van-button": "vant/button/index",
+    "van-dialog": "vant/dialog/index",
+    "van-picker": "vant/picker/index",
+    "van-swipe-cell": "vant/swipe-cell/index",
+    "van-card": "vant/card/index",
+    "van-cell": "vant/cell/index",
+    "van-cell-group": "vant/cell-group/index",
+    "van-steps": "vant/steps/index",
+    "van-radio": "vant/radio/index",
+    "van-radio-group": "vant/radio-group/index",
+    "van-datetime-picker": "vant/datetime-picker/index",
+    "van-collapse": "vant/collapse/index",
+    "van-collapse-item": "vant/collapse-item/index",
+    "van-image": "vant/image/index",
+    "van-goods-action-icon": "vant/goods-action-icon/index",
+    "van-uploader": "vant/uploader/index"
+
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#FC5E2F",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "拼团",
+        "selectedIconPath": "images/pintuan2.png",
+        "iconPath": "images/pintuan.png"
+      },
+  
+      {
+        "pagePath": "pages/tuiguang/tuiguang",
+        "text": "推广赚钱",
+        "selectedIconPath": "images/zuan2.png",
+        "iconPath": "images/zuan.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "selectedIconPath": "images/mine2.png",
+        "iconPath": "images/mine.png"
+      }
+      
+    ]
+  }
+}

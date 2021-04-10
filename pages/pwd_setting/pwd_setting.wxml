@@ -1,0 +1,19 @@
+<!--pages/pwd_setting/pwd_setting.wxml-->
+<view class="pwd_setting">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="设置交易密码"></navBar>
+  <view class="content">
+    <view class="oldPassword" wx:if="{{type!=0}}">
+      <input type="password" placeholder="请输入旧的密码" model:value="{{oldpwd}}"/>
+    </view>
+    <view class="newPassword">
+      <input type="password" placeholder="请输入6位数字新密码" model:value="{{newpwd}}"/>
+    </view>
+    <view class="confirmPassword">
+      <input type="password" placeholder="请确认密码" model:value="{{confirmpwd}}"/>
+    </view>
+    <view class="save" bindtap="submit">
+      保存
+    </view>
+  </view>
+</view>

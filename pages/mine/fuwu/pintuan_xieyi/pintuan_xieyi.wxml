@@ -1,0 +1,6 @@
+<!--pages/mine/fuwu/user_xieyi/user_xieyi.wxml-->
+<view class="user_xieyi">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="拼团协议"></navBar>
+  <rich-text nodes="{{data}}"></rich-text>
+</view>

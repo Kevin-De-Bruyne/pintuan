@@ -1,0 +1,23 @@
+<!--pages/shouquan/shouquan.wxml-->
+<view class="shouquan">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar home navigationBarTitle="速去拼"></navBar>
+  <view class="content">
+    <view class="top">
+      <image src="../../images/shouquan.png"></image>
+    </view>
+    <button wx:if="{{canIUseGetUserProfile}}" class="shouquan_btn" bindtap="getUserProfile">
+      <text class="iconfont icon-weixin1"></text>
+      <text>微信授权登录</text>
+    </button>
+    <view class="xieyi_box">
+      <view class="xieyi_l">
+        <checkbox class="checkbox" checked="{{checked}}" bindtap="check"></checkbox>
+      </view>
+      <view class="xieyi_r">
+        注册登录即代表您同意<text class="red">《速去拼用户服务协议》</text>、<text class="red">《速去拼隐私政策》</text>
+        以及<text class="red">《速去拼拼团活动协议》</text>
+      </view>
+    </view>
+  </view>
+</view>

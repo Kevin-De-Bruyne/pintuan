@@ -1,0 +1,23 @@
+<!--pages/mine/changjian/changjian.wxml-->
+<view class="changjian">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="常见问题"></navBar>
+  <van-collapse accordion value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item name="{{index}}" wx:for="{{data}}">
+    <view slot="title" class="title"><van-icon name="question-o" color="red"/><text style="margin-left:30rpx;">{{item.problem}}</text></view>
+    {{item.answer}}
+  </van-collapse-item>
+  <!-- <van-collapse-item name="2">
+    <view slot="title" class="title"><van-icon name="question-o" color="red"/><text style="margin-left:30rpx;">有赞微商城</text></view>
+    提供多样店铺模板，快速搭建网上商城
+  </van-collapse-item>
+  <van-collapse-item name="3">
+    <view slot="title" class="title"><van-icon name="question-o" color="red"/><text style="margin-left:30rpx;">有赞微商城</text></view>
+    提供多样店铺模板，快速搭建网上商城
+  </van-collapse-item>
+  <van-collapse-item name="4">
+    <view slot="title" class="title"><van-icon name="question-o" color="red"/><text style="margin-left:30rpx;">有赞微商城</text></view>
+    提供多样店铺模板，快速搭建网上商城
+  </van-collapse-item> -->
+</van-collapse>
+</view>

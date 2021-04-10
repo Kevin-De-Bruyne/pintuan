@@ -1,0 +1,9 @@
+/* pages/qr_code/qr_code.wxss */
+.qr_code{
+  margin: 0;
+  padding: 0;
+}
+image{
+  width: 100%;
+  height: 90vh;
+}

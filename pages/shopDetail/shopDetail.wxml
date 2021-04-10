@@ -1,0 +1,132 @@
+<!--pages/shopDetail/shopDetail.wxml-->
+<view class="shopDetail">
+  <navBar back home navigationBarTitle="商品详情"></navBar>
+      <!-- 轮播图 -->
+      <view class="swiper">
+        <swiper indicator-dots="true" indicator-color="rgba(0,0,0, .6)" indicator-active-color="#fff" autoplay="true" interval="3000" duration="1000" circular="true">
+          <swiper-item wx:for="{{data.banner}}">
+            <image src="{{item.image_url}}"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <!-- 价格 -->
+      <view class="price">
+        <view class="price_l">
+          拼团价<text class="new_price">¥{{data.sql.team_price}}</text><text style="padding-left:30rpx; text-decoration: line-through;">¥{{data.sql.shop_price}}</text>
+        </view>
+        <!-- <view class="price_r">历史成团：5449期</view> -->
+        <text class="iconfont icon-aixin collect {{active?'is_collect':''}}" bindtap="collect"></text>
+      </view>
+      <!-- 商品信息 -->
+      <view class="goodsInfo">
+        <view class="goodsInfo_l">
+            <view class="pin_num">{{data.sql.team_num}}人团</view>
+            <view class="goods_name">{{data.sql.goods_name}}</view>
+        </view>
+        <view class="goodsInfo_r">
+          <view class="goodsInfo_r_t">红包补贴</view>
+          <view class="goodsInfo_r_b">¥{{data.sql.reward_amount}}</view>
+        </view>
+      </view>
+      <!-- 拼团aa -->
+      <view class="pintuan_icon">
+        <view class="icon_list">
+          <view class="icon_ts">
+            <text class="iconfont icon-qizi"></text>
+          </view>
+          <view class="icon_c">参与拼团</view>
+          <view class="icon_b"><text style="color:rgb(181,127,96);">{{data.sql.team_num}}</text>人拼团</view>
+        </view>
+        <view class="icon_list">
+          <view class="icon_t">
+            <text class="iconfont icon-aixin1"></text>
+          </view>
+          <view class="icon_c"><text style="color:rgb(181,127,96);">{{data.sql.number_winners}}</text>人拼中发货</view>
+          <view class="icon_b"><text style="color:rgb(181,127,96);">{{data.sql.team_num-data.sql.number_winners}}</text>人未中退款</view>
+        </view>
+        <view class="icon_list">
+          <view class="icon_t">
+            <text class="iconfont icon-qian"></text>
+          </view>
+          <view class="icon_c">未拼中获得奖励</view>
+          <view class="icon_b">
+            <text style="color:rgb(207,103,65);font-size:28rpx;font-weight:bold;">¥{{data.sql.reward_amount}}</text>元红包</view>
+        </view>
+      </view>
+      <!-- 拼团成员信息 -->
+      <view class="pin_member">
+        <view class="pin_t">
+          <view class="pin_t_l">{{data.sql.team_num}}人拼团，可直接参与</view>
+          <view class="pin_t_r"  bindtap="gopin">查看拼团成员</view>
+        </view>
+        <view class="pin_b">
+          <view class="pin_b_l">
+            <view class="pin_memberList" wx:for="{{team_list}}">
+              <image src="{{item.head_pic}}"></image>
+            </view>
+            <view class="pin_memberLists" bindtap="gopin">
+               <text class="iconfont icon-shenglvehao"></text>
+            </view>
+          </view>
+          <!-- <button open-type="share">分享给微信好友</button> -->
+          <view class="pin_b_r">还差<text style="color:red;font-size:25rpx;">{{data.sql.team_num-data.team_num}}</text>人成团</view>
+        </view>
+      </view>
+      <!-- 商品详情 -->
+      <view class="goods_detail">
+        <view class="goods_detail_title">商品详情</view>
+        <view class="rich">
+          <rich-text nodes="{{content}}"></rich-text>
+        </view>
+        
+      </view>
+      <!-- 底部栏 -->
+      <view class="bottom">
+        <view class="bottom_l">
+          <view class="bottom_list">
+            <text class="iconfont icon-kefu"></text>
+            <text class="bottom_text">客服</text>
+          </view>
+          <view class="bottom_list">
+            <text class="iconfont icon-shoucang1 {{active?'is_collect':''}}" bindtap="collect"></text>
+            <text class="bottom_text ">收藏</text>
+          </view>
+          <view class="bottom_list">
+            <!-- <text class="iconfont icon-gouwu_huabanfuben"></text> -->
+            <button class="btn" open-type="share"><text class="iconfont icon-weixin"></text></button>
+            <text class="bottom_text">微信分享</text>
+          </view>
+        </view>
+        <view class="bottom_r" bindtap="cantuan">立即参团<text class="cantan">(省{{data.sql.shop_price-data.sql.team_price}}元)</text></view>
+      </view>
+      <!-- 弹窗 -->
+      <van-popup
+        show="{{ show }}"
+        closeable
+        position="bottom"
+        custom-style="height: 60%"
+         bind:close="onClose"
+       >
+        <view class="pop_top">
+          <view class="top_l">
+            <image src="../../images/goods.png"></image>
+          </view>
+          <view class="top_r">
+            <text class="guige_price">¥{{price}}</text>
+            <text style="font-size:21rpx;padding-top:8rpx;">请选择规格</text>
+          </view>
+          <text class="iconfont icon-guanbi guanbi" bindtap="close"></text>
+        </view>
+        <view class="pop_bottom" wx:for="{{spec}}" wx:for-index="father_index">
+          <view class="bottom_t">{{item.name}}</view>
+          <view class="bottom_b">
+            <view class="guige_box" wx:for="{{item.spec_item}}">
+              <text class="guige_box_list {{item.checked==true?'spec_active':''}}" bindtap="spec_item_click" 
+              data-indexs="{{father_index}}"  data-index="{{index}}" data-spec="{{item.spec_id}}">{{item.item}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="confirm_btn" bindtap="goConorder">确认</view>
+      </van-popup>      
+      </view>
+

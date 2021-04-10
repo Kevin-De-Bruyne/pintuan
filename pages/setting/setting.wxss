@@ -1,0 +1,11 @@
+/* pages/setting/setting.wxss */
+.pwd{
+  height: 80rpx;
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  align-items: center;
+  border-top: 1px solid rgb(241,241,241);
+}

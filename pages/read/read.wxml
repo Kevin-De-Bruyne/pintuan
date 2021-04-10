@@ -1,0 +1,6 @@
+<!--pages/read/read.wxml-->
+<view class="read">
+  <navBar back home navigationBarTitle="系统公告"></navBar>
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <rich-text nodes="{{data.system.content}}"></rich-text>
+</view>

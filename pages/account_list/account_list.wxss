@@ -1,0 +1,19 @@
+/* pages/account_list/account_list.wxss */
+.account{
+  margin: 0;
+  padding:0;
+}
+.content{
+  font-size: 26rpx;
+}
+.account_list{
+  display: flex;
+  padding: 10rpx 20rpx;
+  flex-direction: column;
+  background-color: #fff;
+  border-bottom: 2px solid rgb(238,238,238);
+  padding-top: 30rpx;
+}
+.account_money{
+  margin-top: 30rpx;
+}

@@ -1,0 +1,63 @@
+.custom{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 45px;
+  background: white;
+  z-index: 999;
+}
+
+.title-container {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.capsule {
+  margin-left: 10px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.capsule > view {
+  width: 32px;
+  height: 60%;
+  position: relative;
+}
+
+.capsule image {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.title {
+  color: black;
+  position: absolute;
+  left: 104px;
+  right: 104px;
+  font-size: 14px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@font-face {font-family: "iconfont";
+src: url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPEAAsAAAAAB9AAAAN1AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDOIJoATYCJAMMCwgABCAFhG0HNRutBsiOw7ixa964mMQePKTt28smJyKGmFT8Q007E6+gYmbv2c9NxOK1mSAu/ct90xvvERKJkFbBQ9SQiZSykDDgcvxfic+zLJcxF82tCwOMAwps7EFWIAF5IKmg13SCL66HAMzxJhJRWHx46YmgcLsJQAwbLDKeSMWIGsgXmCIw7hirEIsxwlSbo90EFiWfFz+IF6agYSRxN6odsMV7Vj9bfnaVBt1Ap+zGsJ0dkCeBBCIBBaJHp7MVfxaJRGJuKgPD6cYoBNpWfl2HRGipjS/6w9NAGOPmWgIQiqgGny0DDgR8dr0ADQAJgDGggHnAOtAc55OI2EZhPHZvePbK0t7puQ+Oocs//bu/OJ5fbNTWOK14tLAQmx6kWJy454XFPI9VIyEfN+8N79291rl5ZfjF5b3f4fUr9zp7+x/cnJuZ2Zi5u9a4+3zg6cLyiqG+4tFl3rPLqua+hUsr+35i3bsLGq56nrcjyGnF656wC0tkq68olhTVCf9uJETHwCseL1/182Pqx/Kprd3/8/6v/51/cf1FXO+63XuTX8cH2l4/ZjZxcfDiO7Njl73fz+ljPq25cn3l5ummtsSV2QMHjH3JY5X/V7QmrsBAZP+AsqK/8Ss629b5pFXRTwu3gJU79yxbxk2NnXiU2T4Yq/n+eXF1zq/fvq+tzs4+9ce3d/OzXd7Ejwmnbx227L9mZl9ruDnlgb4kas8v86Lm9MID6AYlZHfik4nS8LO+wykV59DTJvOvqYUC4NmosilIppsxvRWXgF9ToABdV0LRwCplCAOh45bMuE27BuArHnRcrz2vl6udJueCwBSnAhomeEFiSiChaJEwwoJEGGNKDsyJoGSUBQ6MwY9QZkD4hQSAwJZD0LDmEiS23CIU7RWMcOYXjLEVEuY0C4c5LQgWg80LxiBDyEOfyTC4r2kIvoViaf45ikONccqShH6Njiv7IS46th7fQQOdLQaMnSAOxo0TYMAYU4di2gw1zYRRY0wFOeoMGkfWfEzMgK4XdfqO1D0xCnBAGAiEB+jDLcBgOEwMhKg6EWu8/xxEZIgGgzNQ1uS+BnFwkesH4ogmdgKxozQmlb3KJWO5QWTAOAgBYAAOJjpAMdkRzYuYAKO6WykgHESHQQtCFvPEcKUBU5Wd49X6860BzHGXkkITUijUoJE6Bvr05lSPBwAAAA==') format('woff2');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-home:before { content: "\e60c"; }
+.icon-back:before { content: "\e618"; }

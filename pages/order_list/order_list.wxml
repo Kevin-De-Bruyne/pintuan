@@ -1,0 +1,173 @@
+<!--pages/order_list/order_list.wxml-->
+<view class="order_list">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="我的订单"></navBar>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <view class="order_content">
+      <view class="order_box" wx:for="{{order}}"  bindtap="orderClick" data-index="{{index}}">
+      <view class="order_top">
+        <view class="order_top_l">{{item.order_status_txt}}</view>
+        <view class="order_top_r">
+          <text class="iconfont icon-youjiantou_huaban"></text>
+        </view>
+      </view>
+          <!-- 商品信息 -->
+    <view class="goods_info">
+      <view class="goods_t">
+        <view class="goods_l">
+          <image src="{{item.goods_detail.original_img}}"></image>
+        </view>
+        <text>{{item.goods_detail.goods_name}}</text>
+        <view class="goods_r">
+          <view class="goods_r_t">¥{{item.goods_detail.shop_price}}</view>
+          <view class="goods_r_b">x{{item.goods_detail.goods_num}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 付款按钮 -->
+    <view class="fukuan_btn" wx:if="{{item.order_status==0}}">
+      待付款
+    </view>
+    <view class="fukuan_btns" wx:if="{{item.order_status==1}}">
+      已付款
+    </view>
+    <view class="fukuan_btn" wx:if="{{item.order_status==4}}">
+      待收货
+    </view>
+    </view>
+    </view>
+  </van-tab>
+  <van-tab title="拼团中">
+    <view class="order_content">
+      <view class="order_box" wx:for="{{order}}" wx:if="{{item.order_status==1}}" bindtap="orderClick" data-index="{{index}}">
+      <view class="order_top">
+        <view class="order_top_l">{{item.order_status_txt}}</view>
+        <view class="order_top_r">
+          <text class="iconfont icon-youjiantou_huaban"></text>
+        </view>
+      </view>
+          <!-- 商品信息 -->
+    <view class="goods_info">
+      <view class="goods_t">
+        <view class="goods_l">
+          <image src="{{item.goods_detail.original_img}}"></image>
+        </view>
+        <text>{{item.goods_detail.goods_name}}</text>
+        <view class="goods_r">
+          <view class="goods_r_t">¥{{item.goods_detail.shop_price}}</view>
+          <view class="goods_r_b">x{{item.goods_detail.goods_num}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 付款按钮 -->
+    <view class="fukuan_btn" wx:if="{{item.order_status==0}}">
+      待付款
+    </view>
+    <view class="fukuan_btns" wx:if="{{item.order_status==1}}">
+      已付款
+    </view>
+    </view>
+    </view>
+  </van-tab>
+  <van-tab title="待发货">
+    <view class="order_content">
+      <view class="order_box" wx:for="{{order}}" wx:if="{{item.order_status==3}}"  bindtap="orderClick" data-index="{{index}}">
+      <view class="order_top">
+        <view class="order_top_l">{{item.order_status_txt}}</view>
+        <view class="order_top_r">
+          <text class="iconfont icon-youjiantou_huaban"></text>
+        </view>
+      </view>
+          <!-- 商品信息 -->
+    <view class="goods_info">
+      <view class="goods_t">
+        <view class="goods_l">
+          <image src="{{item.goods_detail.original_img}}"></image>
+        </view>
+        <text>{{item.goods_detail.goods_name}}</text>
+        <view class="goods_r">
+          <view class="goods_r_t">¥{{item.goods_detail.shop_price}}</view>
+          <view class="goods_r_b">x{{item.goods_detail.goods_num}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 付款按钮 -->
+    <view class="fukuan_btn" wx:if="{{item.order_status==0}}">
+      待付款
+    </view>
+    <view class="fukuan_btns" wx:if="{{item.order_status==1}}">
+      已付款
+    </view>
+    </view>
+    </view>
+  </van-tab>
+  <van-tab title="待收货">
+    <view class="order_content">
+      <view class="order_box" wx:for="{{order}}" wx:if="{{item.order_status==4}}"  bindtap="orderClick" data-index="{{index}}">
+      <view class="order_top">
+        <view class="order_top_l">{{item.order_status_txt}}</view>
+        <view class="order_top_r">
+          <text class="iconfont icon-youjiantou_huaban"></text>
+        </view>
+      </view>
+          <!-- 商品信息 -->
+    <view class="goods_info">
+      <view class="goods_t">
+        <view class="goods_l">
+          <image src="{{item.goods_detail.original_img}}"></image>
+        </view>
+        <text>{{item.goods_detail.goods_name}}</text>
+        <view class="goods_r">
+          <view class="goods_r_t">¥{{item.goods_detail.shop_price}}</view>
+          <view class="goods_r_b">x{{item.goods_detail.goods_num}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 付款按钮 -->
+    <view class="fukuan_btn" wx:if="{{item.order_status==0}}">
+      待付款
+    </view>
+    <view class="fukuan_btns" wx:if="{{item.order_status==1}}">
+      已付款
+    </view>
+    <view class="fukuan_btn" wx:if="{{item.order_status==4}}">
+      待收货
+    </view>
+    </view>
+    </view>
+  </van-tab>
+  <van-tab title="已收货">
+    <view class="order_content">
+      <view class="order_box" wx:for="{{order}}" wx:if="{{item.order_status==7}}"  bindtap="orderClick" data-index="{{index}}">
+      <view class="order_top">
+        <view class="order_top_l">{{item.order_status_txt}}</view>
+        <view class="order_top_r">
+          <text class="iconfont icon-youjiantou_huaban"></text>
+        </view>
+      </view>
+          <!-- 商品信息 -->
+    <view class="goods_info">
+      <view class="goods_t">
+        <view class="goods_l">
+          <image src="{{item.goods_detail.original_img}}"></image>
+        </view>
+        <text>{{item.goods_detail.goods_name}}</text>
+        <view class="goods_r">
+          <view class="goods_r_t">¥{{item.goods_detail.shop_price}}</view>
+          <view class="goods_r_b">x{{item.goods_detail.goods_num}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 付款按钮 -->
+    <view class="fukuan_btn" wx:if="{{item.order_status==0}}">
+      待付款
+    </view>
+    <view class="fukuan_btns" wx:if="{{item.order_status==1}}">
+      已付款
+    </view>
+    </view>
+    </view>
+  </van-tab>
+</van-tabs>
+</view>

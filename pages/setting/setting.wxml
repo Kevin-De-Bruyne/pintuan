@@ -1,0 +1,11 @@
+<!--pages/setting/setting.wxml-->
+<view class="setting">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="设置"></navBar>
+  <view class="pwd" bindtap="pwd">
+    <view class="left" style="font-size:26rpx;">交易密码</view>
+    <view class="right">
+      <text class="iconfont icon-youjiantou_huaban"></text>
+    </view>
+  </view>
+</view>

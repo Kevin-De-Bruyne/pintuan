@@ -1,0 +1,12 @@
+<!--pages/account_list/account_list.wxml-->
+<view class="account">
+  <navBar back home navigationBarTitle="账户明细"></navBar>
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <view class="content">
+    <view class="account_list" wx:for="{{data}}">
+      <view class="account_name">{{item.desc}}</view>
+      <view class="account_money">金额：{{item.user_money}}</view>
+      <view class="account_time">时间：{{item.change_data}}</view>
+    </view>
+  </view>
+</view>

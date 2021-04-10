@@ -1,0 +1,103 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine">
+  <view class="top">
+    <view class="user_info">
+      <view class="left">
+        <view class="icon">
+          <image src="{{data.head_pic}}"></image>
+        </view>
+        <view class="info">
+          <view class="nameAndVip">
+            <text class="name">{{data.nickname}}</text>
+            <text class="vip">
+              <text>{{data.user_level}}</text>
+            </text>
+          </view>
+          <view class="invited_code">
+            <view class="invited_l">
+              邀请码：{{data.invite}}
+            </view>
+            <view class="invited_l" style="margin-left:30rpx;" bindtap="copy">
+            复制
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="user_right">
+        <text class="iconfont icon-shezhi" bindtap="setting"></text>
+      </view>
+    </view>
+    <!-- 升级盒子 -->
+    <view class="level_up">
+      <view class="level_l">
+        <text class="iconfont icon-huangguan"></text>
+        <text>升级为高级会员，享受更多特权</text>
+      </view>
+      <view class="level_r">立即升级</view>
+    </view>
+  </view>
+      <!-- 内容 -->
+      <view class="content">
+      <view class="price_box">
+        <view class="price_list" bindtap="money_list">
+          <view class="price_t">我的余额(元)</view>
+          <view class="price_b">{{data.user_money}}</view>
+        </view>
+        <view class="price_list" bindtap="butie_list">
+          <view class="price_t">拼购补贴(元)</view>
+          <view class="price_b">{{data.red_env}}</view>
+        </view>
+        <view class="price_list" bindtap="shouyi">
+          <view class="price_t">推广收益(元)</view>
+          <view class="price_b">{{data.dist_award}}</view>
+        </view>
+        <!-- <view class="price_list">
+          <view class="price_t">我的余额(元)</view>
+          <view class="price_b">0</view>
+        </view> -->
+      </view>
+        <!-- order订单 -->
+    <view class="order">
+      <view class="order_list" wx:for="{{data.icon}}" bindtap="iconClick" data-index="{{index}}">
+        <view class="order_list_t">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="order_list_b">{{item.txt}}</view>
+      </view>
+    </view>
+    <!-- 列表大全 -->
+    <view class="listwhole">
+      <view class="list" wx:for="{{icon}}" bindtap="listClick" data-index="{{index}}">
+      <view class="left">
+        <view class="left_icon">
+          <text class="{{item.path}}"></text>
+        </view>
+        <view class="left_txt">{{item.name}}</view>
+      </view>
+      <view class="right"><text class="iconfont icon-youjiantou_huaban"></text></view>
+    </view>
+    </view>
+    <view class="listwholes">
+      <view class="list">
+      <view class="left">
+        <view class="left_icon">
+          <button open-type="contact" 
+			bindcontact="handleContact">
+            <text class="iconfont icon-lianxikefu"></text>
+          </button>
+        </view>
+        <view class="left_txt">我的客服</view>
+      </view>
+      <view class="right"><text class="iconfont icon-youjiantou_huaban"></text></view>
+    </view>
+    </view>
+    </view>
+    <!-- 弹出层 -->
+    <van-popup show="{{ show }}" bind:close="onClose">
+       <view class="relation">商务合作({{data.join_in}})</view>
+       <view class="contact">{{data.join_in}}请联系</view>
+       <view class="weixin">电话微信同步：{{data.wechat_num.value}}</view>
+       <view class="copy" bindtap="copywx">复制微信号</view>
+    </van-popup>
+    <text class="iconfont icon-guanbi1 alen" bindtap="closepop"></text>
+</view>

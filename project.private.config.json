@@ -1,0 +1,125 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人中心",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pages/shopDetail/shopDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单",
+          "pathName": "pages/conOrder/conOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "地址",
+          "pathName": "pages/address/address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单列表",
+          "pathName": "pages/order_list/order_list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "授权页面",
+          "pathName": "pages/shouquan/shouquan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/order_detail/order_detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "设置交易密码",
+          "pathName": "pages/pwd_setting/pwd_setting",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "二维码",
+          "pathName": "pages/qr_code/qr_code",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "常见问题",
+          "pathName": "pages/mine/changjian/changjian",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "服务协议列表",
+          "pathName": "pages/mine/fuwu/fuwu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "分类",
+          "pathName": "pages/category/category",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的收藏",
+          "pathName": "pages/collect/collect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "账户明细",
+          "pathName": "pages/account_list/account_list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "设置",
+          "pathName": "pages/setting/setting",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "钢化膜",
+          "pathName": "pages/shopDetail/shopDetail",
+          "query": "id=4",
+          "scene": null
+        },
+        {
+          "name": "成员列表",
+          "pathName": "pages/team_list/team_list",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

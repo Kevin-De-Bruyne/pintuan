@@ -1,0 +1,128 @@
+<!--index.wxml-->
+<view class="index">
+  <view class="top">
+    <!-- 搜索框 -->
+    <view class="alen">
+      <view class="search">
+      <view class="search_icon">
+        <image src="../../images/search.png" bindtap="search"></image>
+      </view>
+      <input type="text" placeholder="搜您所想" value="{{search}}" bind:input="onInput"/>
+    </view>
+  </view>
+    <!-- 商品分类tabbar切换 -->
+    <view class="goods_tab">
+      <view class="goods_tab_left">
+        <view class="goods_tab_list" wx:for="{{data.home_nav}}" bindtap="goodstab_click" data-index="{{index}}">
+        {{item.menu_name}}
+        <view class="active" wx:if="{{goodstab_index==item.menu_id}}"></view>
+      </view>
+      <!-- <view class="goods_tab_list">人气热卖</view>
+      <view class="goods_tab_list">
+        最新上架
+        <view class="active"></view>
+      </view>
+      <view class="goods_tab_list">日用百货</view>
+      <view class="goods_tab_list" bindtap="bb">箱包</view>
+      <view class="goods_tab_list">日用百货</view>
+      <view class="goods_tab_list">日用百货</view>
+      <view class="goods_tab_list">日用百货</view> -->
+      </view>
+
+      <view class="goods_tab_lists" bindtap="goCate">分类</view>
+    </view>
+    <!-- 筛选 -->
+    <view class="shaixuan" wx:if="{{show_index==2}}">
+        <view class="shaixuan_list">
+          <text bindtap="zonghe" class="{{sort_index==1?'tab_active':''}}" >综合</text>
+        </view>
+        <view class="shaixuan_list">
+          <view catch:tap="sell_sort" class="{{sort_index==2?'tab_active':''}}">销量</view>
+          <view class="paixu" bindtap="sell">
+            <text class="iconfont icon-sanjiaoxing_shang {{sell_up_active?'tab_active':''}}"></text>
+            <text class="iconfont icon-sanjiaoxing {{sell_down_active?'tab_active':''}}"></text>
+          </view>
+        </view>
+        <view class="shaixuan_list">
+          <view catch:tap="num_sort" class="{{sort_index==3?'tab_active':''}}">参团人数</view>
+          <view class="paixu" bindtap="num">
+            <text class="iconfont icon-sanjiaoxing_shang {{num_up_active?'tab_active':''}}"></text>
+            <text class="iconfont icon-sanjiaoxing {{num_down_active?'tab_active':''}}"></text>
+          </view>
+        </view>
+        <view class="shaixuan_list">
+          <view catch:tap="price_sort" class="{{sort_index==4?'tab_active':''}}">价格</view>
+          <view class="paixu" bindtap="price">
+            <text class="iconfont icon-sanjiaoxing_shang {{price_up_active?'tab_active':''}}"></text>
+            <text class="iconfont icon-sanjiaoxing {{price_down_active?'tab_active':''}}"></text>
+          </view>
+        </view>
+    </view>
+    <!-- </div> -->
+
+    <!-- 主体内容 -->
+    <view class="content" wx:if="{{show_index==1}}">
+      <!-- 轮播图 -->
+      <view class="swiper">
+        <swiper indicator-dots="true" indicator-color="rgba(0,0,0, .6)" indicator-active-color="#fff" autoplay="true" interval="3000" duration="1000" circular="true">
+          <swiper-item wx:for="{{data.banner}}">
+            <image src="{{item.img}}"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <!-- 系统公告 -->
+      <view class="gonggao">
+        <view class="gonggao_t">
+          <view class="gonggao_t_l">
+            <image src="../../images/xitong.png"></image>
+          </view>
+          <view class="gonggao_t_r" bindtap="xinshou">{{data.novice_txt}}</view>
+        </view>
+        <view class="gonggao_t">
+          <view class="gonggao_t_l">
+            <image src="../../images/xitong.png"></image>
+          </view>
+          <view class="gonggao_t_r" bindtap="system">{{data.system_txt}}</view>
+        </view>
+      </view>
+      <!-- 人气热卖 -->
+      <view class="remai">
+        <view class="remai_t">
+          <view class="remai_t_l">
+            <text class="re">人气热卖</text><text class="hot">最火爆的商品</text>
+          </view>
+          <view class="remai_t_r" bindtap="goodstab_clicks">更多商品</view>
+        </view>
+        <view class="remai_b">
+          <view class="remai_list" wx:for="{{data.hot_goods}}" data-index="{{index}}" bindtap="reqiClick">
+            <vew class="list_t">
+              <text class="tt">{{item.goods_name}}</text>
+              <view class="tt_butie">补贴{{item.team_price}}元</view>
+            </vew>
+            <vew class="list_b"></vew>
+              <!-- 商品信息 -->
+        <view class="goods">
+          <image src="{{item.original_img}}"></image>
+        </view>
+          </view>
+        </view>
+      
+      </view>
+      <!-- 精选 -->
+      <view class="jingxuan_whole">
+        <view class="jingxuan">
+        <view class="jingxuan_list" wx:for="{{data.partition}}" data-index="{{index}}" bindtap="titleClick">
+          <view class="jingxuan_list_t {{jingxuan_index==item.id?'jingxuan_t_choice':''}}">{{item.name}}</view>
+          <view class="jingxuan_b_choice" wx:if="{{jingxuan_index==item.id}}">精选拼团</view>
+        </view>
+      </view>
+      <!-- 商品详情 -->
+      <goods-list bind:goodsClick="goodsClick" goods="{{goods}}"></goods-list>
+      </view>
+     
+    </view>
+    <view class="contents" wx:if="{{show_index==2}}">
+      <goods-list bind:goodsClick="goodsClick" goods="{{goods}}"></goods-list>
+    </view>
+  </view>
+</view>

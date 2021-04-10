@@ -1,0 +1,152 @@
+/* pages/order_list/order_list.wxss */
+.order_list{
+  margin: 0;
+  padding: 0;
+}
+.order_content{
+  padding: 15rpx 25rpx;
+}
+.order_box{
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 15rpx 25rpx 15rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 35rpx 0 0 0;
+  position: relative;
+}
+.order_top{
+  display: flex;
+  padding-top: 15rpx;
+  padding-left: 15rpx;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid rgb(239,239,239);
+}
+.order_top_l{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.goods_info{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+}
+.goods_t{
+  margin: 0rpx 20rpx 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.goods_l{
+  width: 150rpx;
+  height: 150rpx;
+}
+.goods_l image{
+  width: 100%;
+  height: 100%;
+}
+text{
+  font-size: 23rpx;
+  max-width: 350rpx;
+  /* padding-left: 30rpx; */
+}
+.goods_r{
+  display: flex;
+  flex-direction: column;
+}
+.goods_r_t{
+  font-size: 23rpx;
+}
+.goods_r_b{
+  font-size: 23rpx;
+  text-align: right;
+}
+.goods_b{
+  margin: 50rpx 20rpx 20rpx 20rpx;
+  border-radius: 35rpx;
+  background-color:rgb(247,247,247);
+  padding-left: 35rpx;
+  font-size: 25rpx;
+  color: rgb(138,138,138);
+  padding: 15rpx 35rpx;
+}
+.goods_price{
+  padding: 20rpx;
+  border-radius: 15rpx;
+  display: flex;
+  margin-top: 20rpx;
+  flex-direction: column;
+  background-color: #fff;
+}
+.goods_price_t{
+  display: flex;
+  justify-content: space-between;
+}
+.goods_price_tt{
+  display: flex;
+  padding-top: 20rpx;
+  justify-content: space-between;
+}
+.goods_price_b{
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: space-between;
+}
+.totalprice_text{
+  font-size: 25rpx;
+}
+.totalprice{
+  font-size: 27rpx;
+  font-weight: bold;
+}
+.yunfei_text{
+  font-size: 25rpx;
+}
+.yunfei{
+  font-size: 27rpx;
+  font-weight: bold;
+}
+.yunfeis{
+  font-size: 27rpx;
+  font-weight: bold;
+  color: rgb(220,58,38);
+}
+.goods_t_t{
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid rgb(238,238,238);
+}
+.totalprices{
+  font-size: 33rpx;
+  font-weight: bold;
+  color: rgb(220,58,38);
+}
+.fukuan_btn{
+  position: absolute;
+  right:40rpx;
+  bottom: 10rpx;
+  padding: 15rpx 40rpx;
+  background-color: rgb(239,149,89);
+  color: white;
+  font-size: 23rpx;
+  border-radius: 40rpx;
+}
+.van-tab--active{
+  color: rgb(239,149,89)!important;
+}
+.van-tabs__line{
+  background-color: rgb(239,149,89)!important;
+}
+.van-tab{
+  flex-basis: 20%!important;
+}
+.fukuan_btns{
+  position: absolute;
+  right:80rpx;
+  bottom: 10rpx;
+  color: rgb(239,149,89);
+  font-size: 23rpx;
+}

@@ -1,0 +1,94 @@
+<!--pages/order_detail/order_detail.wxml-->
+<view class="order_detail">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="订单详情"></navBar>
+  <view class="content">
+    <view class="top">
+      <view class="top_l">
+        <image src="{{data.order.goods_detail.original_img}}"></image>
+      </view>
+      <view class="top_r">
+        <text class="goods_name">{{data.order.goods_detail.goods_name}}</text>
+        <text class="goods_price">¥ {{data.order.team_price}}</text>
+        <text class="goods_num">数量 {{data.order.goods_detail.goods_num}}</text>
+        <text class="guige">规格 {{data.order.goods_detail.spec}}</text>
+      </view>
+    </view>
+    <view class="center">
+      <view class="center_t">收货信息</view>
+      <view class="center_b">
+        <view class="center_list">
+          <text>收货人</text>
+          <text>{{data.order.consignee}}</text>
+        </view>
+        <view class="center_list">
+          <text>联系方式</text>
+          <text>{{data.order.mobile}}</text>
+        </view>
+        <view class="center_list">
+          <text>支付方式</text>
+          <text>{{data.order.pay_name}}</text>
+        </view>
+        <view class="center_list">
+          <text>买家留言</text>
+          <text>{{data.order.user_note}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- ------------ -->
+    <view class="center">
+      <view class="center_t">基本信息</view>
+      <view class="center_b">
+        <view class="center_list">
+          <text>订单编号</text>
+          <text>{{data.order.follow_sn}}</text>
+        </view>
+        <view class="center_list">
+          <text>订单状态</text>
+          <text>{{data.order.order_status_txt}}</text>
+        </view>
+        <view class="center_list">
+          <text>下单时间</text>
+          <text>{{data.order.follow_time}}</text>
+        </view>
+        <view class="center_list" wx:if="{{data.order.order_status==4 || data.order.order_status==7}}">
+          <text>配送方式</text>
+          <text>{{data.order.shipping_name}}</text>
+        </view>
+        <view class="center_list">
+          <text>收货地址</text>
+          <text>{{data.order.address}}</text>
+        </view>
+        <view class="center_list" wx:if="{{data.order.order_status==4 || data.order.order_status==7}}">
+          <text>快递单号</text>
+          <text>{{data.order.invoice_no}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- ________________ -->
+    <!-- <view class="center">
+      <view class="center_t">价格信息</view>
+      <view class="center_b">
+        <view class="center_list">
+          <text>应付金额</text>
+          <text>¥{{data.order.total_amount}}</text>
+        </view>
+        <view class="center_list">
+          <text>运费</text>
+          <text>¥{{data.order.shipping_price}}</text>
+        </view>
+        <view class="center_list">
+          <text>余额</text>
+          <text>-¥{{data.order.total_amount}}</text>
+        </view>
+        <view class="center_list">
+          <text>订单总额</text>
+          <text>¥{{data.order.total_amount}}</text>
+        </view>
+      </view>
+    </view> -->
+    <view class="shouhuo_btn" wx:if="{{data.order.order_status==4}}" bindtap="confirm">
+      确认收货
+    </view>
+  </view>
+</view>

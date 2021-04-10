@@ -1,0 +1,25 @@
+<!--pages/mine/fuwu/fuwu.wxml-->
+<view class="fuwu">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="协议列表"></navBar>
+  <view class="content">
+    <view class="fuwu_list" bindtap="goUser">
+      <view class="fuwu_list_l">用户服务协议</view>
+      <view class="fuwu_list_r">
+        <text class="iconfont icon-youjiantou_huaban"></text>
+      </view>
+    </view>
+    <view class="fuwu_list" bindtap="goyinsi">
+      <view class="fuwu_list_l">隐私政策</view>
+      <view class="fuwu_list_r">
+        <text class="iconfont icon-youjiantou_huaban"></text>
+      </view>
+    </view>
+    <view class="fuwu_list" bindtap="gopintuan">
+      <view class="fuwu_list_l">拼团协议</view>
+      <view class="fuwu_list_r">
+        <text class="iconfont icon-youjiantou_huaban"></text>
+      </view>
+    </view>
+  </view>
+</view>
