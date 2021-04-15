@@ -424,3 +424,56 @@ swiper image{
 .tab_active{
   color:rgb(251,84,46);
 }
+button{
+  /* padding: 0!important; */
+  background: transparent;
+  line-height: unset;
+  padding-right: 0!important;
+  padding-top: 0!important;
+  padding-left: 0!important;
+  padding-bottom: 0!important;
+  width: 50rpx!important;
+  /* margin: auto 0!important; */
+  margin-top: -8rpx!important;
+  margin-left: -5rpx!important;
+}
+.relation{
+  padding: 40rpx 40rpx;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 22rpx;
+  /* font-weight: bold; */
+}
+.van-popup{
+  border-radius: 15rpx;
+  position: relative;
+}
+.contact{
+  padding: 0rpx 40rpx 40rpx 40rpx;
+  text-align: left;
+  font-size: 22rpx;
+  margin: 0 auto;
+}
+.weixin{
+  padding: 0rpx 80rpx 0rpx 80rpx;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 22rpx;
+}
+.copy{
+  margin: 30rpx 60rpx 60rpx 60rpx;
+  padding: 20rpx  30rpx;
+  background-image: linear-gradient(to right,rgb(252,94,47),rgb(251,81,46));
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 40rpx;
+}
+.alens{
+  transform: translate(-50%,-50%);
+  top: 75vh;
+  position: absolute;
+  left: 50%;
+  color:white;
+  z-index: 1000;
+}

@@ -1,6 +1,7 @@
 // pages/account_list/account_list.js
 const API = require('../../utils/util.js');
 const token = wx.getStorageSync('token');
+import Dialog from '../../vant/dialog/dialog';
 const app = getApp();
 Page({
 
@@ -10,7 +11,8 @@ Page({
   data: {
     height: app.globalData.height * 1.6,
     type:'',
-    data:{}
+    data:{},
+    show:''
   },
 
   /**
@@ -21,6 +23,45 @@ Page({
       type:options.type
     })
   },
+  gotx(){
+    wx.navigateTo({
+      url: `/pages/withdraw/withdraw?type=${this.data.type}`
+    })
+  },
+  goduihuan(){
+    Dialog.confirm({
+      title: '提示',
+      message: '兑换成功后，补贴金额将全部转为余额，补贴金额清零',
+    })
+    .then(() => {
+      API._post('api/user/exchange',{
+        token:token,
+      }).then(res => {
+        if(res.code==500){
+          wx.showToast({
+            title: res.msg,
+            icon:'none'
+          })
+        }else{
+          wx.showToast({
+            title: res.msg,
+            icon:'none',
+            success:()=>{
+              setTimeout(()=>{
+                wx.navigateBack();
+              },700)
+            }
+          })
+        }
+      }).catch(res => {
+          //wx.showToast({ title:"网络访问错误", icon: 'none' })
+      });
+    })
+    .catch(() => {
+      
+    });
+
+  },
   getData(){
     let token=wx.getStorageSync('token')
     API._post('api/user/account_list',{
@@ -30,6 +71,21 @@ Page({
       this.setData({
         data:res.data
       })
+      if(this.data.data==''){
+          this.setData({
+            show:3
+          })
+      }else{
+        if(this.data.type==2){
+          this.setData({
+            show:1
+          })
+        }else{
+          this.setData({
+            show:2
+          })
+        }
+      }
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
     });

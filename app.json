@@ -13,6 +13,10 @@
     "pages/mine/shangwu/shangwu",
     "pages/shopDetail/shopDetail",
     "pages/setting/setting",
+    "pages/withdraw/withdraw",
+    "pages/withdraw/add_bank/add_bank",
+    "pages/withdraw/bank/bank",
+    "pages/team_member/team_member",
     "pages/team_list/team_list",
     "pages/conOrder/conOrder",
     "pages/order_list/order_list",
@@ -31,7 +35,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#FC5E2F",
-    "navigationBarTitleText": "速去拼",
+    "navigationBarTitleText": "拼购",
     "navigationBarTextStyle":"black",
     "backgroundColor": "#F1F1F1"
   },

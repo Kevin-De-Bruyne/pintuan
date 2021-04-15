@@ -16,7 +16,8 @@ Page({
     yue_show:true,
     pay_type:1,
     pwd:'',
-    spec_id:''
+    spec_id:'',
+    show:false
   },
 
   /**
@@ -51,7 +52,25 @@ Page({
     console.log(this.data.goods_id)
     // this.getData();
   },
+  closepop(){
+    this.setData({
+      show:false
+    })
+  },
+  showpay_pop(){
+    this.setData({
+      show:true
+    })
+  },
+  onClose(){
+    this.setData({
+      show:false
+    })
+  },
   pay(){
+    this.setData({
+      show:false
+    })
     let token=wx.getStorageSync('token')
       API._post('api/goods/join_team',{
         token:token,
@@ -157,6 +176,9 @@ Page({
    */
   onShow: function () {
     this.getData();
+    this.setData({
+      shoew:false
+    })
   },
 
   /**

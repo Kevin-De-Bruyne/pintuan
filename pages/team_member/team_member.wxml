@@ -1,0 +1,29 @@
+<!--pages/team_member/team_member.wxml-->
+<view class="team_member">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="团队"></navBar>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="一级团队">
+    <view class="member_list" wx:for="{{data.s_user}}">
+    <view class="member_content">
+        <view class="chance">个人昵称:{{item.nickname}}</view>
+        <view class="chance">拼团次数: {{item.num}}次</view>
+        <view class="chance">拼团总金额:{{item.price}}元</view>
+        <view class="chance">加入时间:{{item.reg_time}}</view>
+        <view class="chance">{{item.is_buy}}</view>
+    </view>
+  </view>
+  </van-tab>
+  <van-tab title="二级团队">
+    <view class="member_list" wx:for="{{data.ss_user}}">
+    <view class="member_content">
+        <view class="chance">个人昵称:{{item.nickname}}</view>
+        <view class="chance">拼团次数:{{item.num}}次</view>
+        <view class="chance">拼团总金额:{{item.price}}元</view>
+        <view class="chance">加入时间:{{item.reg_time}}</view>
+        <view class="chance">{{item.is_buy}}</view>
+    </view>
+  </view>
+  </van-tab>
+</van-tabs>
+</view>

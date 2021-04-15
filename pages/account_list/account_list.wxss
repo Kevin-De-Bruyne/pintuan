@@ -17,3 +17,19 @@
 .account_money{
   margin-top: 30rpx;
 }
+.btn{
+  background-color: rgb(252,86,47);
+  margin-top: 40rpx;
+  text-align: center;
+  color: white;
+  border-radius: 40rpx;
+  padding: 20rpx 100rpx;
+  margin-bottom: 30rpx;
+}
+.bottom{
+  display: flex;
+  justify-content: center;
+}
+.van-dialog__message{
+  text-align: left!important;
+}

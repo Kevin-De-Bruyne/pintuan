@@ -6,7 +6,12 @@
     <view class="account_list" wx:for="{{data}}">
       <view class="account_name">{{item.desc}}</view>
       <view class="account_money">金额：{{item.user_money}}</view>
-      <view class="account_time">时间：{{item.change_data}}</view>
+      <view class="account_time">时间：{{item.change_date}}</view>
     </view>
+    <view class="bottom">
+      <text class="btn" bindtap="gotx"  wx:if="{{show==2}}">立即提现</text>
+      <text class="btn" bindtap="goduihuan" wx:if="{{show==1}}">立即兑换</text>
+    </view>
+    <van-dialog id="van-dialog" />
   </view>
 </view>

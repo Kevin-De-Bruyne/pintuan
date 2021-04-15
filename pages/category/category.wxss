@@ -41,7 +41,7 @@
 .right{
   display: flex;
   width: 65%;
-  padding: 35rpx;
+  padding: 20rpx;
   align-content: flex-start;
   background-color: #fff;
   overflow-y: scroll;

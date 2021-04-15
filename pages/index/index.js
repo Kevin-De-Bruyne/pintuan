@@ -19,7 +19,8 @@ Page({
     price_down_active:false,
     sort_index:1,
     sort:'desc',
-    type:0
+    type:0,
+    show:true
   },
   // 事件处理函数
   bindViewTap() {
@@ -30,9 +31,17 @@ Page({
   onLoad:function(options) {
     wx.setStorageSync('uid', options.uid)
   },
+  closepop(){
+    this.setData({ show: false });
+  },
   system(){
     wx.navigateTo({
       url: '/pages/read/read',
+    })
+  },
+  copywx(){
+    this.setData({
+      show:false
     })
   },
   xinshou(){

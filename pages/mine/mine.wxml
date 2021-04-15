@@ -21,6 +21,9 @@
             复制
             </view>
           </view>
+          <view class="suggest">
+            <text>推荐人：{{data.s_nickname}}</text>
+          </view>
         </view>
       </view>
       <view class="user_right">
@@ -99,5 +102,5 @@
        <view class="weixin">电话微信同步：{{data.wechat_num.value}}</view>
        <view class="copy" bindtap="copywx">复制微信号</view>
     </van-popup>
-    <text class="iconfont icon-guanbi1 alen" bindtap="closepop"></text>
+    <text class="iconfont icon-guanbi1 alen" bindtap="closepop" wx:if="{{show}}"></text>
 </view>

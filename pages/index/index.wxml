@@ -124,5 +124,11 @@
     <view class="contents" wx:if="{{show_index==2}}">
       <goods-list bind:goodsClick="goodsClick" goods="{{goods}}"></goods-list>
     </view>
+    <van-popup show="{{ show }}" bind:close="onClose">
+       <view class="relation"><text style="color:rgb(252,94,47);font-size:24rpx;">主题：</text>新疆西藏地区物流时效和运费问题，请勿下单</view>
+       <view class="contact"> <text style="color:rgb(252,94,47);font-size:24rpx;">描述：</text>西藏、甘肃、青海、宁夏、新疆、内蒙古、等偏远地区物流费用及发货时间不确定，请勿下单。已下单的请联系客服补交运费。</view>
+       <view class="copy" bindtap="copywx">我知道了</view>
+    </van-popup>
+    <text class="iconfont icon-guanbi1 alens" bindtap="closepop" wx:if="{{show}}"></text>
   </view>
 </view>

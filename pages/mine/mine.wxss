@@ -48,6 +48,11 @@
   padding-left: 30rpx;
   
 }
+.suggest{
+  font-size: 20rpx;
+  color: white;
+  margin-top: 30rpx;
+}
 .vip text{
   padding: 2rpx 15rpx;
   color: white;

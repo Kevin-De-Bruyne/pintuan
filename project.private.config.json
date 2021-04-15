@@ -117,6 +117,24 @@
         {
           "name": "成员列表",
           "pathName": "pages/team_list/team_list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "团队",
+          "pathName": "pages/team_member/team_member",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "提现",
+          "pathName": "pages/withdraw/withdraw",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "银行卡列表",
+          "pathName": "pages/withdraw/bank/bank",
           "scene": null
         }
       ]

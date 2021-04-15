@@ -14,6 +14,11 @@ Page({
       url:'/pages/collect/collect'
     },
     {
+      name:'我的团队',
+      path:'iconfont icon-wodetuandui',
+      url:'/pages/team_member/team_member'
+    },
+    {
       name:'收货地址',
       path:'iconfont icon-shouhuodizhi',
       url:'/pages/address/address'
@@ -101,7 +106,7 @@ Page({
 },
   listClick(e){
     const {index}=e.currentTarget.dataset
-    if(index==4){
+    if(index==5){
       this.setData({ show: true });
     }else{
       wx.navigateTo({

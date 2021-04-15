@@ -1,7 +1,7 @@
 <!--pages/shouquan/shouquan.wxml-->
 <view class="shouquan">
   <view style="height: {{height}}px;width: 100%;position: relative;"></view>
-  <navBar home navigationBarTitle="速去拼"></navBar>
+  <navBar home navigationBarTitle="拼购"></navBar>
   <view class="content">
     <view class="top">
       <image src="../../images/shouquan.png"></image>
@@ -15,8 +15,8 @@
         <checkbox class="checkbox" checked="{{checked}}" bindtap="check"></checkbox>
       </view>
       <view class="xieyi_r">
-        注册登录即代表您同意<text class="red">《速去拼用户服务协议》</text>、<text class="red">《速去拼隐私政策》</text>
-        以及<text class="red">《速去拼拼团活动协议》</text>
+        注册登录即代表您同意<text class="red">《拼购用户服务协议》</text>、<text class="red">《拼购隐私政策》</text>
+        以及<text class="red">《拼购拼团活动协议》</text>
       </view>
     </view>
   </view>

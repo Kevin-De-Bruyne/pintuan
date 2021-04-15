@@ -26,7 +26,7 @@
       </view>
       <!-- 底部 -->
       <view class="goods_b">
-        <input type="text" placeholder="给商家留言" value="{{user_note}}" bind:input="onInput"/>
+        <input type="text" placeholder="给商家留言" value="{{user_note}}" bind:input="onInput" placeholderClass='phcolor'/>
       </view>
     </view>
     <!-- 商品价格 -->
@@ -86,9 +86,16 @@
       <view class="bottom_b">
         <view class="bottom_b_l">
           <text class="zhenshi_price">¥{{data.total_amount}}</text>
-          <text class="num">(共{{data.goods_num}}件)</text>
+          <text class="num">(共{{data.goods.goods_num}}件)</text>
         </view>
-        <view class="bottom_b_r" bindtap="pay">立即支付</view>
+        <view class="bottom_b_r" bindtap="showpay_pop">立即支付</view>
       </view>
+      <van-popup show="{{ show }}" bind:close="onClose" class="popup">
+       <view class="relation">跳出温馨提示（商品为补贴商品，不支持退货，确认后下单）</view>
+       <!-- <view class="contact"> <text style="color:rgb(252,94,47);font-size:24rpx;">描述：</text>西藏、甘肃、青海、宁夏、新疆、内蒙古、等偏远地区物流费用及发货时间不确定，请勿下单。已下单的请联系客服补交运费。</view> -->
+       <view class="copy" bindtap="pay">确认</view>
+    </van-popup>
+    <text class="iconfont icon-guanbi1 alens" bindtap="closepop" wx:if="{{show}}"></text>
+    <!-- <van-dialog id="van-dialog" /> -->
     </view>
 </view>
