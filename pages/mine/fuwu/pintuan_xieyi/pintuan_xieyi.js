@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    height: app.globalData.height * 1.4,
+    height: app.globalData.height *1.3,
     data:{}
   },
 

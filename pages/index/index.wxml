@@ -122,7 +122,7 @@
      
     </view>
     <view class="contents" wx:if="{{show_index==2}}">
-      <goods-list bind:goodsClick="goodsClick" goods="{{goods}}"></goods-list>
+      <goods-list bind:goodsClick="goodsClick" goods="{{goods_sort}}"></goods-list>
     </view>
     <van-popup show="{{ show }}" bind:close="onClose">
        <view class="relation"><text style="color:rgb(252,94,47);font-size:24rpx;">主题：</text>新疆西藏地区物流时效和运费问题，请勿下单</view>

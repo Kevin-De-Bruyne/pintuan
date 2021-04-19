@@ -18,7 +18,7 @@ Page({
           title: '地址列表',   // 名片
           type: '1'
         },
-        height: app.globalData.height * 1.4
+        height: app.globalData.height * 1.3
 	},
 
 	/**

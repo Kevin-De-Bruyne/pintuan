@@ -7,14 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    height: app.globalData.height * 1.4
+    height: app.globalData.height * 1.3
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
   },
   getData(){
     let token=wx.getStorageSync('token')
@@ -39,7 +39,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getData();
+    
   },
 
   /**
@@ -75,9 +75,9 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '黄令狐骂人王',
+      title: '拼购小程序',
       path: '/pages/index/index', // 好友点击分享之后跳转到的小程序的页面
-      desc: '5点下班，黄令狐，yyds',  // 看你需要不需要，不需要不加
+      desc: '推广赚钱',  // 看你需要不需要，不需要不加
       imageUrl: '../../images/goods.png'
     }
 

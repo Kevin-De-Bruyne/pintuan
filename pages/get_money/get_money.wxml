@@ -1,0 +1,87 @@
+<!--pages/get_money/get_money.wxml-->
+<view class="get_money">
+  <view class="top">
+    <view class="user_info">
+      <view class="left">
+        <view class="icon">
+          <image src="{{data.head_pic}}"></image>
+        </view>
+        <view class="info">
+          <view class="nameAndVip">
+            <text class="name">{{data.nickname}}</text>
+            <view class="vip">
+              <text class="iconfont icon-huangguan"></text>
+              <text class="reg">注册会员</text>
+            </view>
+          </view>
+          <view class="suggest">
+            <text>上级：{{data.s_nickname}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="user_right">
+        <text class="iconfont icon-shezhi"></text>
+        <text class="rule">规则说明</text>
+      </view> -->
+    </view>
+    <!-- 升级盒子 -->
+    <view class="level_up">
+      <view class="level_l">
+        <text class="level_invite">邀请码</text>
+        <text class="level_code">{{data.invite}}</text>
+      </view>
+      <view class="level_copy" bindtap="copy">一键复制</view>
+      <view class="level_copy" bindtap="tuiguang">立即推广</view>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class="content">
+    <view class="content_team">团队收益</view>
+    <view class="tx_box">
+      <view class="ke_tx">可提现收益（元）</view>
+      <view class="tx_center">
+        <view class="tx_center_l">{{data.dist_award}}</view>
+        <view class="tx_center_r" bindtap="tx_now">立即提现</view>
+      </view>
+      <view class="history">
+        <view class="history_l">
+          <text></text>
+          <text style="color:rgb(158,158,160);font-size:26rpx;">历史累计收益：{{data.dist_award}}元</text>
+        </view>
+        <view class="history_r">查看明细 ></view>
+      </view>
+      <!-- 直推团队 -->
+
+    </view>
+    <view class="zhitui_box">
+        <view class="zhitui_l">
+          <view class="zhitui-l-t">直推团队（人）</view>
+          <view class="zhitui-l-b">{{data.s_user_count}}</view>
+        </view>
+        <view class="zhitui_r">
+          <view class="zhitui-l-t">间推团队（人）</view>
+          <view class="zhitui-l-b">{{data.ss_user_count}}</view>
+        </view>
+      </view>
+  </view>
+  <!-- 我的业绩 -->
+  <view class="content" style="margin-top:30rpx;">
+    <view class="content_team">我的业绩</view>
+    <view class="zhitui_box">
+        <view class="zhitui_l">
+          <view class="zhitui-l-t">今日业绩（元）</view>
+          <view class="zhitui-l-b">{{data.today_money}}</view>
+        </view>
+        <view class="zhitui_r">
+          <view class="zhitui-l-t">本周业绩（元）</view>
+          <view class="zhitui-l-bs">{{data.week_money}}</view>
+        </view>
+      </view>
+      <view class="zhitui_box">
+        <view class="zhitui_ls">
+          <view class="zhitui-l-t">累计业绩（元）</view>
+          <view class="zhitui-l-bs">{{data.total_money}}</view>
+        </view>
+      </view>
+  </view>
+</view>

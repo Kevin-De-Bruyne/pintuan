@@ -36,7 +36,7 @@
         <text class="iconfont icon-huangguan"></text>
         <text>升级为高级会员，享受更多特权</text>
       </view>
-      <view class="level_r">立即升级</view>
+      <view class="level_r" bindtap="level_up">立即升级</view>
     </view>
   </view>
       <!-- 内容 -->

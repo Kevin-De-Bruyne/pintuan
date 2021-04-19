@@ -1,0 +1,55 @@
+<!--pages/level_intro/level_intro.wxml-->
+<view class="level_intro">
+  <view style="height: {{height}}px;width: 100%;position: relative;"></view>
+  <navBar back home navigationBarTitle="等级说明"></navBar>
+  <view class="content">
+    <view class="top">
+      <view class="top_t">
+        <view class="top_l">
+          <view class="top_icon">
+          <image src="{{data.head_pic}}"></image>
+        </view>
+        <view class="nameInclude">
+          <view class="name">{{data.nickname}}</view>
+          <view class="chenghao">{{data.user_level}}</view>
+        </view>
+        </view>
+        <view class="userIcon">
+          <text class="iconfont icon-huangguan"></text>
+        </view>
+      </view>
+      <view class="top_b">
+        <view class="top_b_l">
+          <text>邀请{{data.level_num}}名有效会员，即可升级为爱拼团长</text>
+          <view class="top_b_b"></view>
+        </view>
+        <view class="top_b_r" bindtap="invite">
+          立即邀请
+        </view>
+      </view>
+      <!-- 推广收益  -->
+      <text class="tuiguang">推广收益</text>
+    </view>
+    <!-- 底部 -->
+    <view class="bottom">
+      <view class="bottom_list">
+        <view class="list">等级特权</view>
+        <view class="list">普通会员</view>
+        <view class="list">高级会员</view>
+        <view class="list">超级会员</view>
+      </view>
+      <view class="bottom_list">
+        <view class="list">直接收益</view>
+        <view class="list">X</view>
+        <view class="list">e</view>
+        <view class="list">e</view>
+      </view>
+      <view class="bottom_list">
+        <view class="list">直接收益</view>
+        <view class="list">X</view>
+        <view class="list">e</view>
+        <view class="list">e</view>
+      </view>
+    </view>
+  </view>
+</view>

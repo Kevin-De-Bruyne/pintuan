@@ -16,6 +16,8 @@
     "pages/withdraw/withdraw",
     "pages/withdraw/add_bank/add_bank",
     "pages/withdraw/bank/bank",
+    "pages/get_money/get_money",
+    "pages/level_intro/level_intro",
     "pages/team_member/team_member",
     "pages/team_list/team_list",
     "pages/conOrder/conOrder",
@@ -87,7 +89,7 @@
       },
   
       {
-        "pagePath": "pages/tuiguang/tuiguang",
+        "pagePath": "pages/get_money/get_money",
         "text": "推广赚钱",
         "selectedIconPath": "images/zuan2.png",
         "iconPath": "images/zuan.png"

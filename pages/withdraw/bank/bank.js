@@ -15,7 +15,7 @@ Page({
           title: '银行列表',   // 名片
           type: '1'
         },
-        height: app.globalData.height * 2
+        height: app.globalData.height * 1.3
 	},
 
 	/**
@@ -28,8 +28,9 @@ Page({
 		this.getlist();
 	},
 	getlist(){
+		let token=wx.getStorageSync('token')
 		url._post('api/user/card', {
-			token: app.globalData.token ? app.globalData.token : token
+			token:  token
 		}).then(res => {
 			this.setData({
 				bank_list: res.data.data
@@ -45,8 +46,9 @@ Page({
 			message: '是否确定删除该银行卡',
 		})
 		.then(() => {
+			let token=wx.getStorageSync('token')
 			url._post('api/user/deletecard', {
-				token: app.globalData.token ? app.globalData.token : token,
+				token: token,
 				id: this.data.bank_list[index].bank_id
 			}).then(res => {
 				if (res.code == 200) {

@@ -1,0 +1,130 @@
+/* pages/level_intro/level_intro.wxss */
+.level_intro{
+  background-color: #fff;
+  height: 100vh;
+}
+.content{
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.top{
+  display: flex;
+  flex-direction: column;
+  height: 300rpx;
+  width: 100%;
+  background-image: linear-gradient(to right,rgb(120,124,151),rgb(189,190,217));
+  border-radius: 20rpx;
+}
+.top_t{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 20rpx 45rpx 20rpx;
+  border-bottom: 1px solid white;
+  justify-content: space-between;
+}
+.top_icon{
+  width: 95rpx;
+  height: 95rpx;
+}
+.top_icon image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.nameInclude{
+  padding-left: 25rpx;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.name{
+  font-size: 32rpx;
+  max-width: 250rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.chenghao{
+  padding:10rpx 10rpx;
+  border-radius: 40rpx;
+  margin-top: 10rpx;
+  font-size: 19rpx;
+  border:1px solid white;
+  max-width: 100rpx;
+  text-align: center;
+}
+.userIcon{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: rgb(113,125,167);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top_l{
+  display: flex;
+  flex-direction: row;
+}
+.icon-huangguan::before{
+  content: "\e63f";
+  color: white;
+  font-size: 46rpx;
+}
+.top_b{
+  padding:30rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.top_b_l{
+  display: flex;
+  flex-direction: column;
+  font-size: 23rpx;
+  color: white;
+}
+.top_b_b{
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  width: 400rpx;
+  height: 10rpx;
+  background-color: rgb(103,113,140);
+}
+.top_b_r{
+  border-radius: 40rpx;
+  background-color: rgb(103,113,140);
+  color: white;
+  font-size: 26rpx;
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+.tuiguang{
+  font-size: 28rpx;
+  margin-top: 40rpx;
+}
+.bottom{
+  margin-top: 90rpx;
+  border-radius: 15rpx;
+  border: 1px solid rgb(213,213,213);
+  padding: 15rpx 35rpx;
+  display: flex;
+  flex-direction: column;
+}
+.bottom_list{
+  display: flex;
+  margin-bottom: 30rpx;
+  flex:1;
+  justify-content: space-between;
+  font-size: 27rpx;
+  color: rgb(177,177,177);
+}
+.bottom_list:last-child{
+  margin-bottom: 0;
+}
+
+.list{
+  width: 20%;
+  text-align: center;
+}

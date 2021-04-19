@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    height: app.globalData.height * 1.4,
+    height: app.globalData.height * 1.3,
     withdraw: [],
 		money: null,
 		bank_list:[],
@@ -26,15 +26,33 @@ Page({
 		this.setData({
 			type:options.type
 		})
+		// let token=wx.getStorageSync('token')
+	},
+	bankList(){
+		wx.navigateTo({
+			url: '/pages/withdraw/bank/bank',
+		})
+	},
+	onCancel() {
+		this.setData({ show: false });
+	},
+	onClose(){
+		this.setData({ show: false });
+	},
+	banklist(){
+		this.setData({ show: true });
+	},
+	onShow(){
+		let token=wx.getStorageSync('token')
 		API._post('api/user/tx',{
-			token: app.globalData.token ? app.globalData.token : token,
+			token: token,
 		}).then(res => {
 			this.setData({
 				withdraw: res.data
 			})
 		})
 		API._post('api/user/card', {
-			token: app.globalData.token ? app.globalData.token : token,
+			token:  token,
 		}).then(res => {
 			if(res.data.data.length == 0){
 				Dialog.confirm({
@@ -62,20 +80,6 @@ Page({
             //wx.showToast({ title:"网络访问错误", icon: 'none' })
         })
 	},
-	bankList(){
-		wx.navigateTo({
-			url: '/pages/withdraw/bank/bank',
-		})
-	},
-	onCancel() {
-		this.setData({ show: false });
-	},
-	onClose(){
-		this.setData({ show: false });
-	},
-	banklist(){
-		this.setData({ show: true });
-	},
 	onConfirm(event){
 		this.setData({ show: false ,bank_select: event.detail.value.text,bank_id: event.detail.value.bank_id});
 	},
@@ -88,8 +92,9 @@ Page({
 		if (!this.data.bank_id) { wx.showToast({ title:"请选择银行卡", icon: 'none'}); return false; }
 		if (this.data.money<this.data.withdraw.config.min) { wx.showToast({ title: "单笔金额必须大于"+this.data.withdraw.config.min+"元", icon: 'none'}); return false;}
 		if (this.data.money>this.data.withdraw.config.max) { wx.showToast({ title: "单笔金额必须小于"+this.data.withdraw.config.max+"元", icon: 'none'}); return false;}
+		let token=wx.getStorageSync('token')
 		API._post('api/user/cashs', {
-			token: app.globalData.token ? app.globalData.token : token,
+			token:token,
 			type:this.data.type,
 			bank_id:this.data.bank_id,
 			money:this.data.money

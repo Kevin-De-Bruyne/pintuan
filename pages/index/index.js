@@ -8,6 +8,7 @@ Page({
     data:{},
     goodstab_index:3,
     goods:[],
+    goods_sort:[],
     jingxuan_index:1,
     search:'',
     home_nav:{},
@@ -30,6 +31,7 @@ Page({
   },
   onLoad:function(options) {
     wx.setStorageSync('uid', options.uid)
+    this.getData();
   },
   closepop(){
     this.setData({ show: false });
@@ -61,7 +63,7 @@ Page({
       nav_id:this.data.goodstab_index
     }).then(res => {
       this.setData({
-        goods:res.data
+        goods_sort:res.data
       })
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -73,7 +75,7 @@ Page({
       nav_id:this.data.goodstab_index
     }).then(res => {
       this.setData({
-        goods:res.data
+        goods_sort:res.data
       })
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -91,7 +93,7 @@ Page({
       nav_id:this.data.goodstab_index
     }).then(res => {
       this.setData({
-        goods:res.data
+        goods_sort:res.data
       })
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -109,7 +111,7 @@ Page({
       nav_id:this.data.goodstab_index
     }).then(res => {
       this.setData({
-        goods:res.data
+        goods_sort:res.data
       })
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -126,7 +128,7 @@ Page({
       nav_id:this.data.goodstab_index
     }).then(res => {
       this.setData({
-        goods:res.data
+        goods_sort:res.data
       })
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -142,7 +144,7 @@ Page({
       nav_id:this.data.goodstab_index
     }).then(res => {
       this.setData({
-        goods:res.data
+        goods_sort:res.data
       })
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -160,7 +162,7 @@ Page({
         nav_id:this.data.goodstab_index
       }).then(res => {
         this.setData({
-          goods:res.data
+          goods_sort:res.data
         })
       }).catch(res => {
           //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -172,7 +174,7 @@ Page({
         nav_id:this.data.goodstab_index
       }).then(res => {
         this.setData({
-          goods:res.data
+          goods_sort:res.data
         })
       }).catch(res => {
           //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -191,7 +193,7 @@ Page({
         nav_id:this.data.goodstab_index
       }).then(res => {
         this.setData({
-          goods:res.data
+          goods_sort:res.data
         })
       }).catch(res => {
           //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -203,7 +205,7 @@ Page({
         nav_id:this.data.goodstab_index
       }).then(res => {
         this.setData({
-          goods:res.data
+          goods_sort:res.data
         })
       }).catch(res => {
           //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -221,7 +223,7 @@ Page({
       goods_name:this.data.search
     }).then(res => {
       this.setData({
-        goods:res.data,
+        goods_sort:res.data,
         show_index:2
       })
     }).catch(res => {
@@ -289,7 +291,7 @@ Page({
         nav_id:this.data.goodstab_index
       }).then(res => {
         this.setData({
-          goods:res.data
+          goods_sort:res.data
         })
       }).catch(res => {
           //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -314,7 +316,7 @@ Page({
         nav_id:this.data.goodstab_index
       }).then(res => {
         this.setData({
-          goods:res.data
+          goods_sort:res.data
         })
       }).catch(res => {
           //wx.showToast({ title:"网络访问错误", icon: 'none' })
@@ -356,7 +358,6 @@ Page({
   onShow(){
     let token=wx.getStorageSync('token')
     console.log(token)
-    this.getData();
     this.setData({
       show_index:1,
       goodstab_index:3

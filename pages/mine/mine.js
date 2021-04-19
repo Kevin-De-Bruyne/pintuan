@@ -50,27 +50,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.getSetting({
-    //   success: function(res){
-    //       console.log(res)
-    //     if (res.authSetting['scope.userInfo']) {
-           
-    //       wx.getUserInfo({
-    //         success:res=> {
-              
-    //         }
-    //       })
-    //     }else{
-    //       wx.navigateTo({
-    //         url: '/pages/shouquan/shouquan',
-    //       })
-    //       wx.showToast({
-    //         title: '请授权登录',
-    //         icon:'none'
-    //       })
-    //     }
-    //   }
-    // })
+    
+  },
+  level_up(){
+    wx.navigateTo({
+      url: '/pages/level_intro/level_intro',
+    })
   },
   money_list(){
     wx.navigateTo({

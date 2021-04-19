@@ -1,4 +1,4 @@
-// pages/pwd_setting/pwd_setting.js
+// pages/get_money/get_money.js
 const app = getApp()
 const API = require('../../utils/util.js');
 Page({
@@ -7,41 +7,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    height: app.globalData.height * 1.3,
-    oldpwd:'',
-    newpwd:'',
-    confirmpwd:'',
-    type:''
+    data:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.type)
-    this.setData({
-      type:options.type
+   
+  },
+  tuiguang(){
+    wx.navigateTo({
+      url: '/pages/qr_code/qr_code',
     })
   },
-  submit(){
+  copy: function (e) {
+    var that = this;
+    wx.setClipboardData({
+     data: this.data.data.invite,
+     success: function (res) {
+       wx.showToast({
+         title: '复制成功',
+         icon:'none',
+       })
+     }
+    });
+   },
+  getData(){
     let token=wx.getStorageSync('token')
-    API._post('api/user/paypwd',{
-      token:token,
-      old_password:this.data.oldpwd,
-      new_password:this.data.newpwd,
-      confirm_password:this.data.confirmpwd
+    API._post('api/user/making_money',{
+      token:token
     }).then(res => {
-      if(res.code==200){
-       wx.navigateBack();
-       }
-      wx.showToast({
-        title: res.msg,
-        icon:'none'
+      this.setData({
+        data:res
       })
-   
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
     });
+  },
+  tx_now(){
+    wx.navigateTo({
+      url: `/pages/withdraw/withdraw?type=${1}`,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -54,7 +61,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData();
   },
 
   /**

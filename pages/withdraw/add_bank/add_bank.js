@@ -38,7 +38,7 @@ Page({
           title: '添加银行卡',   // 名片
           type: '1'
         },
-        height: app.globalData.height * 1.4
+        height: app.globalData.height * 1.3
 	},
 
 	/**
@@ -76,8 +76,9 @@ Page({
 		if (!this.data.banknumber) { wx.showToast({ title:"银行卡号为空", icon: 'none'}); return false; }
 		if (!this.data.users) { wx.showToast({ title: "持卡人为空", icon: 'none' }); return false; }
 		if (!this.data.phone) { wx.showToast({ title: "手机号码为空", icon: 'none' }); return false; }
+		let token=wx.getStorageSync('token')
 		url._post('api/user/addbank', {
-			token: app.globalData.token ? app.globalData.token : token,
+			token: token,
 			bank_name: this.data.bankname,
 			bank_num: this.data.banknumber,
 			bank_username: this.data.users,

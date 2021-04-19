@@ -1,6 +1,7 @@
-// pages/pwd_setting/pwd_setting.js
-const app = getApp()
+// pages/level_intro/level_intro.js
 const API = require('../../utils/util.js');
+const token = wx.getStorageSync('token');
+const app = getApp();
 Page({
 
   /**
@@ -8,37 +9,28 @@ Page({
    */
   data: {
     height: app.globalData.height * 1.3,
-    oldpwd:'',
-    newpwd:'',
-    confirmpwd:'',
-    type:''
+    data:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.type)
-    this.setData({
-      type:options.type
+    this.getData();
+  },
+  invite(){
+    wx.navigateTo({
+      url: '/pages/qr_code/qr_code',
     })
   },
-  submit(){
+  getData(){
     let token=wx.getStorageSync('token')
-    API._post('api/user/paypwd',{
-      token:token,
-      old_password:this.data.oldpwd,
-      new_password:this.data.newpwd,
-      confirm_password:this.data.confirmpwd
+    API._post('api/user/level_detail',{
+      token:token
     }).then(res => {
-      if(res.code==200){
-       wx.navigateBack();
-       }
-      wx.showToast({
-        title: res.msg,
-        icon:'none'
+      this.setData({
+        data:res
       })
-   
     }).catch(res => {
         //wx.showToast({ title:"网络访问错误", icon: 'none' })
     });
